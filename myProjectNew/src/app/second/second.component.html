@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <label>Username</label>
+<input style="margin-left: 45px;" class="inputBox" autocomplete="off" type="text" (input)="onInput($event)" [(ngModel)]="username">
+    </div>
+    <div class="row">
+ <p>Data entered: {{ username }}</p> 
+    </div>
+    <div class="row">
+        <label>UserPassword</label>
+ <input style="margin-left: 20px;" class="inputBox" autocomplete="off" type="password" (input)="onInput($event)" [(ngModel)]="userPassword">
+    </div>
+    <div *ngIf="ShowPasswordFlag">
+        <div class="row">
+            <p>Data entered: {{ userPassword }}</p> 
+               </div>
+    </div>
+
+    <div>
+        <input type="checkbox" (click)="showPasswordFun($event)"   >
+        <span style="color: black;">Show Password</span>
+       </div>
+   
+    <div>
+ <button class="pranav-secondary" (click)="submitData()" [disabled]="DisabledFlag"> Submit</button>
+</div>
+</div>

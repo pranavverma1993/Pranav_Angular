@@ -1,0 +1,134 @@
+<div class="container">
+
+    <select>
+        <option>Select1</option>
+     <option *ngFor="let item of jsonArray">
+            {{item.name}}
+
+        </option>
+ 
+    </select>
+
+
+    <div class="row">
+        <div>
+            <label style="margin: 10px;">FirstName</label>
+            <input style="padding-left:20px;margin-top: 20px;" class="inputBox" autocomplete="off" type="text"
+                [(ngModel)]="saveEmployeeDetails.firstName">
+            <!-- <p>Data entered: {{ saveEmployeeDetails.firstName }}</p> -->
+
+        </div>
+        <div>
+            <label style="margin: 20px;">LastName</label>
+            <input style=" padding-left:20px;margin-top: 20px;;" class="inputBox" autocomplete="off" type="text"
+                [(ngModel)]="saveEmployeeDetails.lastName">
+            <!-- <p>Data entered: {{ saveEmployeeDetails.lastName }}</p> -->
+
+        </div>
+        <div>
+            <label style="margin: 10px;">UserId</label>
+            <input style=" padding-left:20px;margin-top: 20px;;" class="inputBox" autocomplete="off" type="text"
+                [(ngModel)]="saveEmployeeDetails.userId">
+            <!-- <p>Data entered: {{ saveEmployeeDetails.userId }}</p> -->
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div>
+
+            <button class="pranav-primary" (click)="saveEmployee()">SaveData </button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-lg-3" style="margin-top: 20px;">
+            <label style="margin: 10px;margin-bottom: 10px;padding-left:20px">GetUserId</label>
+            <input class="inputBox" autocomplete="off" type="text" [(ngModel)]="getEmployeeDetails.userId">
+            <!-- <p>Data entered: {{ getEmployeeDetails.userId }}</p> -->
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <button style="margin-top:20px;" class="pranav-primary" (click)="getEmployee()">GetData</button>
+        <ul>
+            <ol *ngFor=" let item of getEmployeeDetailsOPList">
+                <div> <label><b>FirstName: </b></label> {{item.firstName}}</div>
+                <div><label><b>LastName: </b></label> {{item.lastName}}</div>
+
+            </ol>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-lg-3" style="margin-top: 20px;">
+            <label style="margin: 10px;">DeleteUserID</label>
+            <input class="inputBox" autocomplete="off" type="text" [(ngModel)]="deleteEmployeeDetails.userId">
+            <!-- <p>Data entered: {{ getEmployeeDetails.userId }}</p> -->
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div>
+            <button style="margin-top: 20px;" class="pranav-primary" (click)="deleteEmployee()">DeleteData</button>
+
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div>
+            <label style="margin: 20px;">FirstName</label>
+            <input class="inputBox" autocomplete="off" type="text" [(ngModel)]="updateEmployeeDetails.firstName">
+            <!-- <p>Data entered: {{ updateEmployeeDetails.firstName }}</p> -->
+
+        </div>
+        <div>
+            <label style="margin: 10px;">LastName</label>
+            <input class="inputBox" autocomplete="off" type="text" [(ngModel)]="updateEmployeeDetails.lastName">
+            <!-- <p>Data entered: {{ updateEmployeeDetails.lastName }}</p> -->
+
+        </div>
+        <div>
+            <label style="margin: 10px;">UserId</label>
+            <input class="inputBox" autocomplete="off" type="text" [(ngModel)]="updateEmployeeDetails.userId">
+            <!-- <p>Data entered: {{ updateEmployeeDetails.userId }}</p> -->
+
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <button class="pranav-primary" (click)="updateEmployee()">updateEmployee
+        </button>
+    </div>
+
+
+    <div class="row" style="margin-top: 50px;">
+        <div>
+    <button class="pranav-primary" (click)="FetchAllData()">FetchAllData </button>
+            <table>
+                <tr>
+
+                    <td *ngFor=" let item of getEmployeeDetailsOPList">
+                        <div> <label><b>FirstName: </b></label> {{item.firstName}}</div>
+                        <div><label><b>LastName: </b></label> {{item.lastName}}</div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+  
+
+</div>

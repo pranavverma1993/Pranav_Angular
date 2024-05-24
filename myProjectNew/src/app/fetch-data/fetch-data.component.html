@@ -1,0 +1,28 @@
+<div class="row" style="margin-top: 50px;margin-left: 100px;">
+    <div>
+        <button class="pranav-primary" (click)="FetchAllData()">FetchAllData </button>
+
+        <button class="pranav-secondary" style="margin-left: 200px;" (click)="logout()">Logout </button>
+        <div class="row" style="margin-top: 50px">
+        <input type="search" [(ngModel)]="searchText" class="inputBox">
+    </div>
+
+        <table style="margin-top: 50px; padding-left: 10px;">
+            <tr>
+                <th>UserID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+             
+            </tr>
+            <tr *ngFor=" let item of getEmployeeDetailsOPList | filter:searchText">
+                <!-- <input  type="checkbox" id="UserData"> -->
+                <td>{{item.userId}}</td>
+                <td>{{item.firstName}}</td>
+                <td>{{item.lastName}}</td>
+               
+            </tr>
+        </table>
+
+        <!-- {{test | uppercase}} -->
+    </div>
+</div>
